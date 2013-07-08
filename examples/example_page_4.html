@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="no-touch">
+<head>
+  <title>smart Keys - Example Usage</title>
+  <link type="text/css" rel="stylesheet" href="../stylesheets/main.css">
+  <style type="text/css">
+    .smart-section {
+      padding-bottom: 26em;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>smart Keys - jQuery Example Usage <em>(page 4)</em></h1>
+  
+  <div class="smart-section">                                                                                                                
+    <h2>
+      <a href="#" class="smart-higthlight" id="smart-541" rel="bookmark">Louie the Lilac: &quot;What equipment would you need for your operation?&quot;</a>
+    </h2>
+  </div>
+
+  <div class="smart-section">                                                                                                                
+    <h2>
+      <a href="#" class="smart-higthlight" id="smart-542" rel="bookmark">Bruce: &quot;I&rsquo;ll need two glasses of warm water.&quot;</a>
+    </h2>
+  </div>
+
+  <div class="smart-section">                                                                                                                
+    <h2>
+      <a href="#" class="smart-higthlight" id="smart-543" rel="bookmark">Lotus: &quot;Two glasses of warm water?&quot;</a>
+    </h2>
+  </div>
+
+  <div class="smart-section">                                                                                                                
+    <h2>
+      <a href="#" class="smart-higthlight" id="smart-544" rel="bookmark">Bruce: &quot;Yes, warm water plays a major part in newly perfected animal surgery.&quot;</a>
+    </h2>
+  </div>
+
+  <div class="smart-section">                                                                                                                
+    <h2>
+      <a href="#" class="smart-higthlight" id="smart-545" rel="bookmark">Blaze: &quot;No wonder I&rsquo;m starved, it's after lunch! Oh Batman, would you get me a candy bar please?&quot;</a>
+    </h2>
+  </div>
+  
+  <div class="smart-section">                                                                                                                
+    <h2>
+      <a href="#" name="bottom" class="smart-higthlight" id="smart-546" rel="bookmark">Batman: &quot;Candy? Actually, fresh fruit is much more healthful.&quot;</a>
+    </h2>
+  </div>
+  
+  <p><div class="pagination">
+    <a href="example_page_3.html" class="disabled prev_page">&laquo; Previous</a> 
+    <a href="example.html">1</a> 
+    <a href="example_page_2.html">2</a> 
+    <a href="example_page_3.html">3</a> 
+    <span class="current">4</span> 
+  </div></p>
+
+  <div id="smart-keys-nav">
+    <a onclick="smartKeys.moveToItem(1); return false;" href="javascript:void(0);">next (j)</a> |
+    <a onclick="smartKeys.moveToItem(-1); return false;" href="javascript:void(0);">prev (k)</a> |
+    <a onclick="smartKeys.movePage(1); return false;" href="javascript:void(0);">page next (l)</a> |
+    <a onclick="smartKeys.movePage(-1); return false;" href="javascript:void(0);">page prev (h)</a>
+  </div>
+
+  <script type="text/javascript">
+    //if('__proto__' in {}) {
+    //  document.write('<script src="../javascripts/zepto/zepto.js" type="text/javascript"><\/script>');
+    //  document.write('<script src="../javascripts/zepto/zepto-extra.js" type="text/javascript"><\/script>');
+    //} else {
+      document.write('<script src="../javascripts/jquery/jquery.js" type="text/javascript"><\/script>');
+      document.write('<script src="../javascripts/jquery/jquery-browser-support.js" type="text/javascript"><\/script>');
+    //}
+  </script>
+  <script src="../javascripts/hotkey.js" type="text/javascript"></script>
+  <script src="../javascripts/smart_keys.js" type="text/javascript"></script>
+</body>
+</html>

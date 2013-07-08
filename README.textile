@@ -1,0 +1,114 @@
+h1. smart Keys
+
+h2. About
+
+Keyboard short cuts for smart through listings one item at at time (and across entire pages).  
+Inspired by the smart at "FFFFOUND!":http://ffffound.com/
+and https://github.com/matthutchinson/paging_keys_js
+
+ 
+The script uses either the "zepto":http://zeptojs.com/ or "jquery":http://jquery.com/ js libraries and "hotkey.js":http://la.ma.la/blog/diary_200511041713.htm for key event hooks.
+
+h2. Demo
+
+Holy explanations Batman!, there is a working demo there "examples/example.html"
+
+h2. Caveats
+
+Ongoing issues with this script include;
+
+* needs more testing on different browsers
+* needs more testing coverage in general
+* there are some places where CSS id selectors would suit better over class selectors
+* so far manually tested on the following mac browsers; 
+** Safari 3/4, FireFox 3/3.5, Opera 9+, Camino 1.6.9
+
+h2. Setup / Using
+
+h3. Requirements
+
+What do you need?
+
+* "zepto":http://zeptojs.com/ OR "jquery":http://jquery.com/
+* a working keyboard and browser
+* for the example - a sense of "1970's Batman humor":http://adamwest.tripod.com/b-lectur.htm
+
+h3. Using
+
+To use on your own website, simply;
+
+* markup your entry titles with the following CSS hierarchy; .smart-section .smart-higthlight 
+* include at the bottom of page: 
+	<script type="text/javascript">
+    if('__proto__' in {}) {
+      document.write('<script src="../javascripts/zepto/zepto.js" type="text/javascript"><\/script>');
+      document.write('<script src="../javascripts/zepto/zepto-extra.js" type="text/javascript"><\/script>');
+    } else {
+      document.write('<script src="../javascripts/jquery/jquery.js" type="text/javascript"><\/script>');
+      document.write('<script src="../javascripts/jquery/jquery-browser-support.js" type="text/javascript"><\/script>');
+    }
+  </script>
+  <script src="../javascripts/hotkey.js" type="text/javascript"></script>
+  <script src="../javascripts/smart_keys.js" type="text/javascript"></script>
+
+* include the appropriate smart_keys.js javascript after
+* add pagination html to each page as shown in the example (in "Rails":http://rubyonrails.org/, if you're using "will_paginate":http://wiki.github.com/mislav/will_paginate, you'll get this for free)
+* optionally add the smart-keys-nav element somewhere on each page, and include the CSS for it
+* thats it! 
+
+Make your browser height small enough to engage vertical scrolling, then use j/k to move up/down through listing (and across the pagination).  You can also use h/l to move between entire pages. So;
+
+* j next item (down)
+* k prev item (up)
+* h next page 
+* l next page
+
+h3. Configuration
+
+The config variable in smartKeys can be used to customize the class to suit your own HTML/CSS selectors.  See the comments alongside each attribute for more info. 
+
+h3. Minimized
+
+The "YUI compressor":http://developer.yahoo.com/yui/compressor/ has been used successfully to minimise smart_keys.js (a minimised version is NOT included in the release).  All unit tests included run on a non-compressed script.
+
+
+h2. Example Configuration Explanation 
+
+Four "micro-formatted":http://microformats.org/ ( "hAtom":http://microformats.org/wiki/hatom ) example pages with pagination links (in the "will_paginate":http://wiki.github.com/mislav/will_paginate style) The example uses the #bottom anchor link on the last post of each page, so smart backwards will start at the bottom and work its way up through the page.  Each example page has an optional smart smart key at the top right corner (when javascript is available).  In the example the "prototype":http://www.prototypejs.org/ OR "jquery":http://jquery.com/ library is loaded from "ajax.googleapis.com":http://code.google.com/apis/ajax/ (this is a good idea).
+
+Have a look at the example html documents and the tests for more information.
+               
+h2. Why use the 'HJKL' keys?
+    
+Everyone has their own preferences/ideas on which keys work best. I chose what seems to be the accepted default right now and the comments below enforce this point somewhat.
+
+"...because j and k are on the home row. Most keyboards have a little nubbin on the j so you can find it by touch. There is also some precedent for the pair. j/k move the cursor down/up in vi for example..."
+
+"...Google reader / Google Mail use the same keys..."
+
+"...Earlier computers had no need for arrow keys, so all the basic vi commands use keys you’d find on a very limited keyboard..."
+
+"...But they’re also very nice since it’s where the right hand sits when you’re a touch typist. j and k take almost no effort to type..."
+
+"...page up/down and cursor keys are not always available on every keyboard, or can be hard to find on laptops or shortened keyboards..."
+
+h2. Credits
+
+Who's who?
+
+* Authored by "Cedric Darricau":http://www.avantagegraphique.com
+* Some jQuery work by "Peter O'Toole":http://github.com/peteot
+* Inspired by "FFFFOUND!":http://ffffound.com/ keyboard naviagtion and "Matthew Hutchinson":http://matthewhutchinson.net
+* Explained by "Ryan Singer, 37 Signals":http://www.37signals.com/svn/posts/1409-heres-a-demo-of-some-thoughtful-ui-on-ffffoundcom
+* Includes "hotkey.js":http://la.ma.la/blog/diary_200511041713.htm
+* Wise words followed from "7 Rules of Unobtrusive Javascript":http://icant.co.uk/articles/seven-rules-of-unobtrusive-javascript/
+
+h2. Get out clause
+
+Right now this script is provided without warranty, or support from the author.
+
+h2. Creative Commons License
+
+<a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/uk/80x15.png" /></a>
+
+<span xmlns:dc="http://purl.org/dc/elements/1.1/" property="dc:title">Smart Keys</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://github.com/matthutchinson/smart_keys_js" property="cc:attributionName" rel="cc:attributionURL">Cedric Darricau</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/2.0/uk/">Creative Commons Attribution 2.0 UK: England &amp; Wales License</a>.

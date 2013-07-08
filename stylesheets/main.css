@@ -1,0 +1,95 @@
+/* show/hide smart help keys if js available, smart-keys class gets to body by javascript */
+body.smart-keys #smart-keys-nav {
+	display:block;
+}
+
+/* optional styles on floating nav */
+#smart-keys-nav {
+	background:rgba(235,235,235,0.9);
+	font-size:14px;
+	padding:10px 20px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	display:none;
+}
+
+/* optional style for currently item */
+.smart-current {
+  background: yellow;
+}
+
+/* the following styles are for demo purposes only */
+body {
+	background: #b4ccd4; 
+	font: 16px/24px "Helvetica Neue", "Helvetica", arial, sans-serif;
+  	color: #333;
+	margin:0;
+}
+
+h1 {
+	padding:1em;
+	margin:0;
+	color:#000;
+}
+
+h2 {
+	font: 16px/24px "Helvetica Neue", "Helvetica", arial, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	color: #6a6444;
+	font-weight: bold;
+	margin-right: 20px;
+}
+p {
+	padding:1em;
+}
+
+a {
+	color: #000;
+	text-decoration: none;
+	border-bottom: 1px dotted #46b0d4;
+}
+
+.clear {
+	clear: both;
+}
+	
+a:visited {
+	color: #46b0d4;
+}
+
+a:hover {
+	color: #46b0d4;
+}
+
+.smart-section {
+	padding:1em 2em 1em 2em;
+	width:90%;
+	margin:0 auto;
+	background:#FFF;
+}
+
+.pagination {
+	text-align:center;
+	background:#000;
+	border-top:1px solid #AAA;
+	border-bottom:1px solid #AAA;
+	padding:2em 0;
+	font-size:1.1em;
+	font-weight:bold;
+	margin:0 auto;
+	border-bottom: none;
+}
+.pagination a, .pagination span  {
+	padding:0.5em;
+	color:#FFF;
+	border-bottom: 1px dotted #7E7A41;
+}
+
+.pagination a {
+border-bottom: none;
+}
+
+.pagination a:hover {
+	color:#999;
+}
