@@ -6,7 +6,7 @@ var SmartKeys = function() {
   // settings
   var config = {
     nodeSelector:        '.smart-section .smart-higthlight',  // used to select each item on the page and place in the map (must be a link)
-    prevPageSelector:    '.previous_page',            // link on this element should always jump to prev page a.prev_page (must be a link)
+    prevPageSelector:    '.previous_page',            // link on this element should always jump to prev page a.previous_page (must be a link)
     nextPageSelector:    '.next_page',                // link on this element should always jump to next page a.next_page (must be a link)
     smartNavId:          'smart-keys-nav',            // dom id of the floating page smart element
     keyNext:             'j',                         // hot keys used
@@ -26,7 +26,7 @@ var SmartKeys = function() {
   var hot_key         = false;
   var disable_hot_key = false;
   var currentElement  = null;
-  var currentPagging  = null;
+  var currentSmarty  = null;
 
   function getEl(selector) {
     return $(selector);
@@ -43,14 +43,6 @@ var SmartKeys = function() {
 
   function isIE() {
     return $.browser.msie;
-  }
-
-  function isWebKit() {
-    return $.browser.safari;
-  }
-
-  function isChrome() {
-    return $.browser.chrome;
   }
 
   function init() {
@@ -149,17 +141,21 @@ var SmartKeys = function() {
     if (!asset_loaded)
       return false;
     
-    if (currentPagging == null && p == null) {
+    if (currentSmarty == null && p == null) {
       p = currentItem(delta);
     }
 
-    else if( !isVisible( currentPagging ) ) {
+    if (p != null) {
+      p = p;
+    }
+
+    else if( !isVisible( currentSmarty ) ) {
       p = currentItem(delta);
     }
 
     else {
       
-      var index = item_map.indexOf( currentPagging );
+      var index = item_map.indexOf( currentSmarty );
 
       
       index = index + delta
@@ -177,13 +173,13 @@ var SmartKeys = function() {
     }
 
 
-    setCurrentPagging(p);
+    setcurrentSmarty(p);
 
     return true;
   }
 
-  function setCurrentPagging(p) {
-    currentPagging = p;
+  function setcurrentSmarty(p) {
+    currentSmarty = p;
     toggleCurrentElement( p.id );
     if( typeof($.scrollTo) === 'function' )
       $.scrollTo(p.y); // require zepto.scroll.js
@@ -195,9 +191,9 @@ var SmartKeys = function() {
     
     var index = 0;
 
-    if( currentPagging && isVisible( currentPagging ) ) {
+    if( currentSmarty && isVisible( currentSmarty ) ) {
       
-      index = item_map.indexOf(currentPagging);
+      index = item_map.indexOf(currentSmarty);
     }
     else {
       
@@ -257,9 +253,9 @@ var SmartKeys = function() {
 
   function openActive() {
     if ( currentElement.attr('href') )
-      redirect( currentElement.attr('href') )
+      currentElement.click();
     else
-      redirect( currentElement.find('a').first().attr('href') )
+      currentElement.find('a').first().click()
   }
 
   function movePage(delta) {
@@ -268,7 +264,7 @@ var SmartKeys = function() {
       if (w.is_at_top)
         movePagePrev();
 
-      else if ( currentPagging && item_map[0] === currentPagging )
+      else if ( currentSmarty && item_map[0] === currentSmarty )
         movePagePrev();  
 
       else
@@ -278,14 +274,14 @@ var SmartKeys = function() {
       if (w.is_at_last)
         movePageNext();
 
-      else if ( currentPagging && item_map[item_map_size - 1] === currentPagging )
+      else if ( currentSmarty && item_map[item_map_size - 1] === currentSmarty )
         movePageNext();
 
       else
         p = item_map[ item_map_size - 1 ]
         
     }
-    setCurrentPagging(p);
+    setcurrentSmarty(p);
   }
 
   function movePageNext() {
